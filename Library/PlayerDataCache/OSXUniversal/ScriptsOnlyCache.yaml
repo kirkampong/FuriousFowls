@@ -1,19 +1,21 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - BallCollisionHandler
+    - BasketballGameManager
     - Bird
     - Brick
     - CameraFollow
     - CameraMove
     - Destroyer
-    - GameManager
+    - EntryPlane
     - GameplayController
     - LevelMenuController
     - MainMenuController
     - ParallaxScroll
     - Pig
-    - Rectangle
     - Responsive
+    - Score
     - SlingShot
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
@@ -23,7 +25,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.TileDragAndDropManager
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
-    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -40,6 +41,8 @@ ScriptsOnlyBuild:
     - Class: 20
       Script: {instanceID: 0}
     - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
       Script: {instanceID: 0}
     - Class: 28
       Script: {instanceID: 0}
@@ -65,6 +68,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 96
       Script: {instanceID: 0}
+    - Class: 102
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
@@ -74,32 +79,40 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9782}
     - Class: 114
-      Script: {instanceID: 9888}
+      Script: {instanceID: 9820}
     - Class: 114
-      Script: {instanceID: 10114}
+      Script: {instanceID: 9890}
     - Class: 114
-      Script: {instanceID: 10324}
+      Script: {instanceID: 10116}
     - Class: 114
-      Script: {instanceID: 10466}
+      Script: {instanceID: 10326}
     - Class: 114
-      Script: {instanceID: 10478}
+      Script: {instanceID: 10468}
     - Class: 114
-      Script: {instanceID: 10726}
+      Script: {instanceID: 10482}
     - Class: 114
-      Script: {instanceID: 10882}
+      Script: {instanceID: 10730}
     - Class: 114
-      Script: {instanceID: 11044}
+      Script: {instanceID: 10886}
     - Class: 114
-      Script: {instanceID: 11230}
+      Script: {instanceID: 10920}
     - Class: 114
-      Script: {instanceID: 11422}
+      Script: {instanceID: 11050}
     - Class: 114
-      Script: {instanceID: 11634}
+      Script: {instanceID: 11236}
     - Class: 114
-      Script: {instanceID: 11696}
+      Script: {instanceID: 11428}
+    - Class: 114
+      Script: {instanceID: 11578}
+    - Class: 114
+      Script: {instanceID: 11640}
+    - Class: 114
+      Script: {instanceID: 11702}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -153,29 +166,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9782}
     - Class: 114
-      Script: {instanceID: 9888}
+      Script: {instanceID: 9890}
     - Class: 114
-      Script: {instanceID: 10114}
+      Script: {instanceID: 10116}
     - Class: 114
-      Script: {instanceID: 10324}
+      Script: {instanceID: 10326}
     - Class: 114
-      Script: {instanceID: 10478}
+      Script: {instanceID: 10482}
     - Class: 114
-      Script: {instanceID: 10726}
+      Script: {instanceID: 10730}
     - Class: 114
-      Script: {instanceID: 10882}
+      Script: {instanceID: 10886}
     - Class: 114
-      Script: {instanceID: 11044}
+      Script: {instanceID: 11050}
     - Class: 114
-      Script: {instanceID: 11230}
+      Script: {instanceID: 11236}
     - Class: 114
-      Script: {instanceID: 11296}
+      Script: {instanceID: 11302}
     - Class: 114
-      Script: {instanceID: 11422}
+      Script: {instanceID: 11428}
     - Class: 114
-      Script: {instanceID: 11634}
+      Script: {instanceID: 11640}
     - Class: 114
-      Script: {instanceID: 11696}
+      Script: {instanceID: 11702}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -208,17 +221,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9662}
     - Class: 114
-      Script: {instanceID: 9888}
+      Script: {instanceID: 9890}
     - Class: 114
-      Script: {instanceID: 10324}
+      Script: {instanceID: 10326}
     - Class: 114
-      Script: {instanceID: 10726}
+      Script: {instanceID: 10730}
     - Class: 114
-      Script: {instanceID: 11230}
+      Script: {instanceID: 11236}
     - Class: 114
-      Script: {instanceID: 11634}
+      Script: {instanceID: 11640}
     - Class: 114
-      Script: {instanceID: 11660}
+      Script: {instanceID: 11666}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -247,17 +260,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9662}
     - Class: 114
-      Script: {instanceID: 9888}
+      Script: {instanceID: 9890}
     - Class: 114
-      Script: {instanceID: 10324}
+      Script: {instanceID: 10326}
     - Class: 114
-      Script: {instanceID: 10726}
+      Script: {instanceID: 10730}
     - Class: 114
-      Script: {instanceID: 11230}
+      Script: {instanceID: 11236}
     - Class: 114
-      Script: {instanceID: 11634}
+      Script: {instanceID: 11640}
     - Class: 114
-      Script: {instanceID: 11716}
+      Script: {instanceID: 11722}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -300,7 +313,7 @@ ScriptsOnlyBuild:
       Hash: 0a21fb09c9419bd836d51460c5d3b973
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: GameManager
+    className: BasketballGameManager
   - hash:
       serializedVersion: 2
       Hash: 0f1d53aedba0bd5eb9bc36e75cb55ed7
@@ -325,6 +338,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: GroupTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Score
   - hash:
       serializedVersion: 2
       Hash: a5781dc71a671b1ad2b38de19f24b71f
@@ -483,10 +502,10 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 9aeb2a7870a647c0dc26b6fd99f8d9be
+      Hash: 8591ae400bdf2ceb990e6eca919b002c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Rectangle
+    className: EntryPlane
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -559,6 +578,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SlingShot
+  - hash:
+      serializedVersion: 2
+      Hash: 6734abbe0502b196f9a1fc0bddd03129
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BallCollisionHandler
   - hash:
       serializedVersion: 2
       Hash: 783f593b9380cf72d0f7ebfd4a0d4bcd
