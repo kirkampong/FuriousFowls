@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
         bricks = new List<GameObject>(GameObject.FindGameObjectsWithTag("Brick"));
         birds = new List<GameObject>(GameObject.FindGameObjectsWithTag("Bird"));
         pigs = new List<GameObject>(GameObject.FindGameObjectsWithTag("Pig"));
+        audioSource = GetComponentsInParent<AudioSource>();
     }
 
     void OnEnable()
@@ -73,8 +74,6 @@ public class GameManager : MonoBehaviour
                 break;
 
             case GameState.Won:
-                audioSource[0].Play();
-                StartCoroutine(Delay(3f));
                 if (Input.GetMouseButtonDown(0))
                 {
                     Application.LoadLevel("LevelMenu");
@@ -82,8 +81,6 @@ public class GameManager : MonoBehaviour
                 break;
 
             case GameState.Lost:
-                audioSource[1].Play();
-                StartCoroutine(Delay(3f));
                 if (Input.GetMouseButtonDown(0))
                 {
                     Application.LoadLevel("LevelMenu");
@@ -91,11 +88,6 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
-    }
-
-    System.Collections.IEnumerator Delay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
     }
 
     void AnimateBirdToSlingshot()
@@ -148,10 +140,12 @@ public class GameManager : MonoBehaviour
                 cameraFollow.isFollowing = false;
                 if (AllPigsAreDestroyed())
                 {
+                    audioSource[0].Play();
                     gameState = GameState.Won;
                 }
                 else if (currentBirdIndex == birds.Count - 1)
                 {
+                    audioSource[1].Play();
                     gameState = GameState.Lost;
                 }
                 else

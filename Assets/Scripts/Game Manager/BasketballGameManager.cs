@@ -22,6 +22,7 @@ public class BasketballGameManager : MonoBehaviour
         slingShot.slingShootLineRenderer2.enabled = false;
 
         birds = new List<GameObject>(GameObject.FindGameObjectsWithTag("Bird"));
+        audioSource = GetComponentsInParent<AudioSource>();
     }
 
     void OnEnable()
@@ -64,18 +65,16 @@ public class BasketballGameManager : MonoBehaviour
                 break;
 
             case GameState.Won:
-                audioSource[0].Play();
                 if (Input.GetMouseButtonDown(0))
                 {
-                    Application.LoadLevel("MainMenu");
+                    Application.LoadLevel("LevelMenu");
                 }
                 break;
 
             case GameState.Lost:
-                audioSource[1].Play();
                 if (Input.GetMouseButtonDown(0))
                 {
-                    Application.LoadLevel("MainMenu");
+                    Application.LoadLevel("LevelMenu");
                 }
                 break;
         }
@@ -134,10 +133,12 @@ public class BasketballGameManager : MonoBehaviour
                 cameraFollow.isFollowing = false;
                 if (AllBasketsMade())
                 {
+                    audioSource[0].Play();
                     gameState = GameState.Won;
                 }
                 else if (currentBirdIndex == birds.Count - 1)
                 {
+                    audioSource[1].Play();
                     gameState = GameState.Lost;
                 }
                 else
