@@ -32,7 +32,7 @@ public class Bird : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         lineRenderer.enabled = false;
-        lineRenderer.sortingLayerName = "Foreground";
+        //lineRenderer.sortingLayerName = "Foreground";
 
         myBody.isKinematic = true;
         myCollider.radius = GameVariables.BirdColliderRadiusBig;
